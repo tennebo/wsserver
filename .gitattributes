@@ -1,0 +1,57 @@
+# Control end-of-line normalization for different file types.
+# Reference: http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+
+# Fallback: Tell Git to detect text files and automatically normalize them
+* text=auto
+
+# Git configuration files
+.gitattributes  text eol=lf
+.gitconfig      text eol=lf
+.gitignore      text eol=lf
+
+# Gradle and Maven build files/wrappers
+build.gradle       text eol=native
+settings.gradle    text eol=native
+gradle.properties  text eol=native
+gradlew            text eol=lf
+gradlew.bat        text eol=crlf
+mvnw               text eol=lf
+mvnw.bat           text eol=crlf
+
+# Unix script files: Always check out with LF
+*.sh    text eol=lf
+*.csh   text eol=lf
+
+# Windows script files: Always check out with CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+*.reg   text eol=crlf
+
+# Text files
+*.txt   text
+*.csv   text
+*.xml   text
+*.html  text
+*.yml   text
+*.md    text
+*.json  text
+
+# Source code
+*.groovy  text diff=java
+*.java    text diff=java
+*.js      text
+*.ts      text
+*.tsx     text
+*.css     text diff=css
+*.scss    text diff=css
+
+# CrossAsset
+*.nxt     text
+
+# Binary image files
+*.gif     binary
+*.ico     binary
+*.jpg     binary
+*.jpeg    binary
+*.png     binary
